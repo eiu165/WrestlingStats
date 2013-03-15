@@ -8,7 +8,7 @@ namespace WrestlingStats
 	{
 		UIView _overview;
 		UIScrollView _detail; 
-		 
+		UIButton test;
 		
 		public override void ViewDidLoad ()
 		{
@@ -41,7 +41,16 @@ namespace WrestlingStats
 				BackgroundColor = UIColor.DarkGray,
 				AutoresizingMask = UIViewAutoresizing.FlexibleWidth
 			};
+			AddButton (50.0f, ref test, 0, "test");
+			_detail.Add (test);
 			View.AddSubview (_detail);
+		}
+		
+		void AddButton ( float buttonHeight, ref UIButton button, int index, string text)
+		{
+			button = UIButton.FromType (UIButtonType.RoundedRect);
+			button.SetTitle (text, UIControlState.Normal);
+			button.Frame = new RectangleF (0, index * buttonHeight, 55.0f, buttonHeight); 
 		}
 	}
 }

@@ -77,6 +77,7 @@
     <Compile Include="Screen\MainScreen.cs" />
     <Compile Include="Views\MyView.cs" />
     <Compile Include="Views\PlayerView.cs" />
+    <Compile Include="Screen\EditNameScreen.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
