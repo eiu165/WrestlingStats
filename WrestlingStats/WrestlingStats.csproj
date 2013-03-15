@@ -78,6 +78,10 @@
     <Compile Include="Views\MyView.cs" />
     <Compile Include="Views\PlayerView.cs" />
     <Compile Include="Screen\EditNameScreen.cs" />
+    <Compile Include="Screen\EditNameScreen.designer.cs">
+      <DependentUpon>EditNameScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Extensions\Keyboard.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -93,5 +97,10 @@
   <ItemGroup>
     <Folder Include="Screen\" />
     <Folder Include="Views\" />
+    <Folder Include="Core\" />
+    <Folder Include="Core\Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Screen\EditNameScreen.xib" />
   </ItemGroup>
 </Project>

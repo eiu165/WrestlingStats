@@ -9,6 +9,7 @@ namespace WrestlingStats
 		UIView _overview;
 		UIScrollView _detail; 
 		UIButton test;
+		EditNameScreen _editNameScreen;
 		
 		public override void ViewDidLoad ()
 		{
@@ -55,10 +56,13 @@ namespace WrestlingStats
 			
 			button.TouchUpInside += (o, e) => 
 			{  
-				using(var alert = new UIAlertView("Sorry", "this device has No Camera", null, "OK", null)) 
-				{
-					alert.Show();  
-				}
+//				using(var alert = new UIAlertView("Sorry", "this device has No Camera", null, "OK", null)) 
+//				{
+//					alert.Show();  
+//				}
+				
+				if(this._editNameScreen == null) { this._editNameScreen = new EditNameScreen(); }
+				this.NavigationController.PushViewController(this._editNameScreen, true);
 			}; 
 
 		}

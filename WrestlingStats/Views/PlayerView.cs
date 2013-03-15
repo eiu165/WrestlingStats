@@ -33,6 +33,14 @@ namespace WrestlingStats
 			button.SetTitle (text, UIControlState.Normal);
 			button.Frame = new RectangleF (0, index * buttonHeight, rect.Width, buttonHeight);
 			this.Add (button);
+			
+			button.TouchUpInside += (o, e) => 
+			{  
+				using(var alert = new UIAlertView("Sorry", "this device has No Camera", null, "OK", null)) 
+				{
+					alert.Show();  
+				}
+			}; 
 		}
 	}
 
