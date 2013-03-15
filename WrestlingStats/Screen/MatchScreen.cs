@@ -24,7 +24,11 @@ namespace WrestlingStats
 				Frame = new RectangleF (0, 0, View.Frame.Width, overViewHeight),
 				BackgroundColor = UIColor.Orange
 			};
-			//_overview.Add (new PlayerControl ());
+			var width = _overview.Frame.Width / 2;
+			var leftPlayer = new PlayerView (new RectangleF (0, 0, width, _overview.Frame.Height));
+			_overview.Add ( leftPlayer );
+			var rightPlayer = new PlayerView (new RectangleF (width, 0, width, _overview.Frame.Height));
+			_overview.Add ( rightPlayer );
 			View.AddSubview (_overview);
 		}
 

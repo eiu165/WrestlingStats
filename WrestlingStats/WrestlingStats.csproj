@@ -75,7 +75,8 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Screen\MatchScreen.cs" />
     <Compile Include="Screen\MainScreen.cs" />
-    <Compile Include="Screen\PlayerControl.cs" />
+    <Compile Include="Views\MyView.cs" />
+    <Compile Include="Views\PlayerView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -90,5 +91,6 @@
   </ProjectExtensions>
   <ItemGroup>
     <Folder Include="Screen\" />
+    <Folder Include="Views\" />
   </ItemGroup>
 </Project>
