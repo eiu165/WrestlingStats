@@ -16,7 +16,7 @@ namespace WrestlingStats
         public override bool FinishedLaunching (UIApplication app, NSDictionary options)
         {     
             window = new UIWindow (UIScreen.MainScreen.Bounds);          
-            MainController vc = new MainController ();
+            MainScreen vc = new MainScreen ();
  
 			
 			//---- instantiate a new navigation controller

@@ -4,26 +4,12 @@ using MonoTouch.UIKit;
 
 namespace WrestlingStats
 {
-	public class MainController : UIViewController
+	public class MainScreen : UIViewController
 	{
 		UIView _homeView;
-		UIButton _matchButton;
-		UIButton _searchButton;
-		UIButton _timerButton;
-		UIButton _rosterButton;
+		UIButton _matchButton; 
+		MatchScreen _matchScreen ;
 
-		ScrollController _scrollScreen ;
-		
-		public MainController ()
-		{ 
-		}
-
-		public override void ViewWillAppear (bool animated) {
-			base.ViewWillAppear (animated);
-			this.NavigationController.SetNavigationBarHidden (true, animated);
-		} 
-
-		
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
@@ -47,12 +33,20 @@ namespace WrestlingStats
 			
 			//---- same thing, but for the hello universe screen
 			this._matchButton.TouchUpInside += (sender, e) => {
-				if(this._scrollScreen == null) { this._scrollScreen = new ScrollController(); }
-				this.NavigationController.PushViewController(this._scrollScreen, true);
+				if(this._matchScreen == null) { this._matchScreen = new MatchScreen(); }
+				this.NavigationController.PushViewController(this._matchScreen, true);
 			};
 
 			View.AddSubview (this._homeView);
 		}
+
+		
+		public override void ViewWillAppear (bool animated) {
+			base.ViewWillAppear (animated);
+			this.NavigationController.SetNavigationBarHidden (true, animated);
+		} 
+		
+
 		 
 	}
 }
