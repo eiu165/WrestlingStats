@@ -75,6 +75,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Screen\MatchScreen.cs" />
     <Compile Include="Screen\MainScreen.cs" />
+    <Compile Include="Screen\PlayerControl.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

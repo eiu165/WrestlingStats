@@ -12,26 +12,32 @@ namespace WrestlingStats
 		
 		public override void ViewDidLoad ()
 		{
-			base.ViewDidLoad ();
- 
+			base.ViewDidLoad (); 
 			float overViewHeight = 190.0f; 
-			_overview = new UIView{
+			AddOverview (overViewHeight); 
+			AddDetails (overViewHeight);  
+		}
+		
+		void AddOverview (float overViewHeight)
+		{
+			_overview = new UIView {
 				Frame = new RectangleF (0, 0, View.Frame.Width, overViewHeight),
 				BackgroundColor = UIColor.Orange
 			};
+			//_overview.Add (new PlayerControl ());
+			View.AddSubview (_overview);
+		}
 
-			float detailHeight = View.Frame.Height - overViewHeight;
+		void AddDetails (float overViewHeight)
+		{
+			float detailHeight = View.Frame.Height - _overview.Frame.Height;
 			_detail = new UIScrollView {
 				Frame = new RectangleF (0, overViewHeight, View.Frame.Width, detailHeight),
-				ContentSize = new SizeF ( View.Frame.Width *2, detailHeight),
+				ContentSize = new SizeF (View.Frame.Width * 2, detailHeight),
 				BackgroundColor = UIColor.DarkGray,
 				AutoresizingMask = UIViewAutoresizing.FlexibleWidth
 			};
-
-			
-			View.AddSubview (_overview);
 			View.AddSubview (_detail);
 		}
-		
 	}
 }
