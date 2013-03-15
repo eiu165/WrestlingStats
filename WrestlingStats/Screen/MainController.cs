@@ -6,44 +6,53 @@ namespace WrestlingStats
 {
 	public class MainController : UIViewController
 	{
-		UIScrollView _scrollView;
-		List<UIButton> _buttons;
+		UIView _homeView;
+		UIButton _matchButton;
+		UIButton _searchButton;
+		UIButton _timerButton;
+		UIButton _rosterButton;
+
+		ScrollController _scrollScreen ;
 		
 		public MainController ()
-		{
-			_buttons = new List<UIButton> ();
+		{ 
 		}
+
+		public override void ViewWillAppear (bool animated) {
+			base.ViewWillAppear (animated);
+			this.NavigationController.SetNavigationBarHidden (true, animated);
+		} 
+
 		
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 			
-			float h = 50.0f;
-			float w = 50.0f;
+			float buttonHeight = 50.0f;
+			float buttonWidth = 50.0f;
 			float padding = 10.0f;
 			int n = 25;
 			
-			_scrollView = new UIScrollView {
-				Frame = new RectangleF (0, 0, View.Frame.Width, h + 2 * padding),
-				ContentSize = new SizeF ((w + padding) * n, h),
-				BackgroundColor = UIColor.DarkGray,
-				AutoresizingMask = UIViewAutoresizing.FlexibleWidth
+			this._homeView = new UIView {
+				Frame = new RectangleF (0, 0, View.Frame.Width, View.Frame.Height), 
+				BackgroundColor = UIColor.Yellow 
 			};
+
 			
-			for (int i=0; i<n; i++) {
-				var button = UIButton.FromType (UIButtonType.RoundedRect);
-				button.SetTitle (i.ToString (), UIControlState.Normal);
-				button.Frame = new RectangleF (padding * (i + 1) + (i * w), padding, w, h);
-				_scrollView.AddSubview (button);
-				_buttons.Add (button);
-			}
+			_matchButton = UIButton.FromType (UIButtonType.RoundedRect);
+			_matchButton.SetTitle ("Match", UIControlState.Normal);
+			var i = 1;
+			_matchButton.Frame = new RectangleF (padding , padding * (i + 1) + (i * buttonWidth), buttonWidth, buttonHeight);
+			_homeView.AddSubview (this._matchButton); 
 			
-			View.AddSubview (_scrollView);
+			//---- same thing, but for the hello universe screen
+			this._matchButton.TouchUpInside += (sender, e) => {
+				if(this._scrollScreen == null) { this._scrollScreen = new ScrollController(); }
+				this.NavigationController.PushViewController(this._scrollScreen, true);
+			};
+
+			View.AddSubview (this._homeView);
 		}
-		
-		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
-		{
-			return (toInterfaceOrientation != UIInterfaceOrientation.PortraitUpsideDown);
-		}
+		 
 	}
 }

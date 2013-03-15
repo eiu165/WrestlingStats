@@ -11,16 +11,24 @@ namespace WrestlingStats
     [Register ("AppDelegate")]
     public partial class AppDelegate : UIApplicationDelegate
     {
-        UIWindow window;
-        UIViewController vc;
+        UIWindow window; 
 
         public override bool FinishedLaunching (UIApplication app, NSDictionary options)
         {     
             window = new UIWindow (UIScreen.MainScreen.Bounds);          
-            vc = new MainController ();
-            window.RootViewController = vc;
-            window.MakeKeyAndVisible ();
-            
+            MainController vc = new MainController ();
+ 
+			
+			//---- instantiate a new navigation controller
+			var rootNavigationController = new UINavigationController();  
+			//---- add the home screen to the navigation controller (it'll be the top most screen)
+			rootNavigationController.PushViewController(vc, false);
+			
+			//---- set the root view controller on the window. the nav controller will handle the rest
+			this.window.RootViewController = rootNavigationController;
+			
+			this.window.MakeKeyAndVisible (); 
+ 
             return true;
         }
     }
