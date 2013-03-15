@@ -45,12 +45,22 @@ namespace WrestlingStats
 			_detail.Add (test);
 			View.AddSubview (_detail);
 		}
-		
+
+
 		void AddButton ( float buttonHeight, ref UIButton button, int index, string text)
 		{
 			button = UIButton.FromType (UIButtonType.RoundedRect);
 			button.SetTitle (text, UIControlState.Normal);
 			button.Frame = new RectangleF (0, index * buttonHeight, 55.0f, buttonHeight); 
+			
+			button.TouchUpInside += (o, e) => 
+			{  
+				using(var alert = new UIAlertView("Sorry", "this device has No Camera", null, "OK", null)) 
+				{
+					alert.Show();  
+				}
+			}; 
+
 		}
 	}
 }
