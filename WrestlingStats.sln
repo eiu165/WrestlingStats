@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WrestlingStats", "WrestlingStats\WrestlingStats.csproj", "{176D38A8-AA35-47A4-972F-B107ED21D3A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WrestlingStats.Ios", "WrestlingStats.Ios\WrestlingStats.Ios.csproj", "{CCF92EF7-95AB-4EDB-AA5B-258B70BEAD78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,18 +9,24 @@ Global
 		Release|iPhoneSimulator = Release|iPhoneSimulator
 		Debug|iPhone = Debug|iPhone
 		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{176D38A8-AA35-47A4-972F-B107ED21D3A9}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{176D38A8-AA35-47A4-972F-B107ED21D3A9}.Debug|iPhone.Build.0 = Debug|iPhone
-		{176D38A8-AA35-47A4-972F-B107ED21D3A9}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{176D38A8-AA35-47A4-972F-B107ED21D3A9}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{176D38A8-AA35-47A4-972F-B107ED21D3A9}.Release|iPhone.ActiveCfg = Release|iPhone
-		{176D38A8-AA35-47A4-972F-B107ED21D3A9}.Release|iPhone.Build.0 = Release|iPhone
-		{176D38A8-AA35-47A4-972F-B107ED21D3A9}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{176D38A8-AA35-47A4-972F-B107ED21D3A9}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{CCF92EF7-95AB-4EDB-AA5B-258B70BEAD78}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{CCF92EF7-95AB-4EDB-AA5B-258B70BEAD78}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{CCF92EF7-95AB-4EDB-AA5B-258B70BEAD78}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{CCF92EF7-95AB-4EDB-AA5B-258B70BEAD78}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{CCF92EF7-95AB-4EDB-AA5B-258B70BEAD78}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{CCF92EF7-95AB-4EDB-AA5B-258B70BEAD78}.Debug|iPhone.Build.0 = Debug|iPhone
+		{CCF92EF7-95AB-4EDB-AA5B-258B70BEAD78}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{CCF92EF7-95AB-4EDB-AA5B-258B70BEAD78}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{CCF92EF7-95AB-4EDB-AA5B-258B70BEAD78}.Release|iPhone.ActiveCfg = Release|iPhone
+		{CCF92EF7-95AB-4EDB-AA5B-258B70BEAD78}.Release|iPhone.Build.0 = Release|iPhone
+		{CCF92EF7-95AB-4EDB-AA5B-258B70BEAD78}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{CCF92EF7-95AB-4EDB-AA5B-258B70BEAD78}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = WrestlingStats\WrestlingStats.csproj
+		StartupItem = WrestlingStats.Ios\WrestlingStats.Ios.csproj
 	EndGlobalSection
 EndGlobal
